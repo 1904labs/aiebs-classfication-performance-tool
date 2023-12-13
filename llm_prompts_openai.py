@@ -25,12 +25,14 @@ def system_prompt_openai():
 
     Guidelines:
     - Classify the text appearing in triple backticks into one of the following categories.
+        - Agent
         - Authorizations
         - Benefits
         - Billing
         - ChangeProvider
         - ChangeAddress
         - DentalCoverage
+        - ExitCall
         - Eligibility
         - FindProvider
         - MedicareForms

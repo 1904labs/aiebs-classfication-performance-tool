@@ -9,8 +9,9 @@ from datetime import datetime
 
 def get_prediction_errors(message, data_file):
     try:
-        prediction_errors = '<table><tr><th>Utterance</th><th>Predicted Intent</th><th>Actual Intent</th></tr>'
         results = message_parsing.parse_message_content(data_file, message)
+
+        # table of errors
         nbr_correct = 0
         error_nbr = 0
         for _, result in enumerate(results):
@@ -18,19 +19,27 @@ def get_prediction_errors(message, data_file):
                 nbr_correct += 1
             else:
                 error_nbr += 1
-                prediction_errors += f"<tr><td>{result['user_utterance']}</td><td>{result['predicted_intent']}</td><td>{result['actual_intent']}</td></tr>"
                 
         if nbr_correct > 0:
             prediction_percentage = 100 * nbr_correct / len(results)
         else:
             prediction_percentage = 0.
-        prediction_errors += '</table><br>'
-
         nbr_total = nbr_correct + error_nbr
-    
-        return prediction_errors, nbr_correct, nbr_total, prediction_percentage
+
+        # df of errors
+        errors_df = pd.DataFrame(results)
+        try:
+            errors_df = (errors_df[errors_df.predicted_intent.apply(lambda x: x.lower()) != 
+                                   errors_df.actual_intent.apply(lambda x: x.lower())]
+                                   .sort_values(by=['predicted_intent', 'actual_intent'])
+                                   .reset_index(drop=True))
+
+        except Exception as e:
+            errors_df = e
+
+        return errors_df, nbr_correct, nbr_total, prediction_percentage
     except Exception as e:
-        return np.nan, np.nan, np.nan, np.nan,
+        return np.nan, np.nan, np.nan, np.nan, np.nan,
 
 
 def get_logs_analysis_df(uploaded_files):

@@ -1,5 +1,8 @@
 # data file - hardcoded for now
-DATA_FILE = 'data/prompts_centene_short.csv'
+# DATA_FILE = 'data/prompts_centene_short.csv'
+# DATA_FILE = 'data/centene_test_set.csv'
+# DATA_FILE = 'data/centene_test_set_1.csv'
+DATA_FILE = 'data/centene_test_set_2.csv'
 
 # classifications
 CLASSIFICATIONS = ['Authorizations', 'Benefits', 'Billing', 'ChangeAddress', 'ChangeProvider', 

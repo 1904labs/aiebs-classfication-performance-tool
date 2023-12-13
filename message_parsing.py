@@ -34,7 +34,6 @@ def parse_message_content(DATA_FILE, message):
     Parse the message content into a list of (predicted intent: xx, actual_intent: xx,user_utterance: xx) dicts.
     '''
     df = pd.read_csv(DATA_FILE)
-    # predicted_intents = [x[3:].strip() for x in message.split('\n')]  # [3:] to strip #. at the beginning
     predicted_intents = parse_intent(message)
     user_intents = list(df.intents)
     user_utterances = list(df.utterances)

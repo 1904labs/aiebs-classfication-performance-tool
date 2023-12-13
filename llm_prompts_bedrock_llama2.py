@@ -12,6 +12,7 @@ def get_prompt():
 
     Guidelines:
     - Classify each item of the numbered list appearing in triple backticks into one of the following categories.
+        - Agent
         - Authorizations
         - Benefits
         - Billing
@@ -19,6 +20,7 @@ def get_prompt():
         - ChangeAddress
         - DentalCoverage
         - Eligibility
+        - ExitCall
         - FindProvider
         - MedicareForms
         - OTCQuestions
@@ -65,6 +67,10 @@ def get_prompt():
     30. "Can you send me a temporary ID card while I wait for the original?"
     31. "I need to locate a physical therapist covered by my plan."
     32. "Is there a preferred pharmacy for my medications?"
+    33. "I want to talk to an agent."
+    34. "Please direct me to a person."
+    35. "End the call."
+    36. "We're done with the call."
     ```
 
     Answers:
@@ -100,39 +106,48 @@ def get_prompt():
     30. RequestIDCard
     31. FindProvider
     32. PharmacyLocation
-
+    33. Agent
+    34. Agent
+    35. ExitCall
+    36. ExitCall
+    
     Roleplay: You are a customer service dispatcher at a a medical benefits brokerage company.
 
     Task: Identify (and only identify) the intent of a user request.
-
-    Guidelines:
-    - Classify each item of the numbered list appearing in triple backticks into one of the following categories.
-        - Authorizations
-        - Benefits
-        - Billing
-        - ChangeProvider
-        - ChangeAddress
-        - DentalCoverage
-        - Eligibility
-        - FindProvider
-        - MedicareForms
-        - OTCQuestions
-        - PharmacyLocation
-        - PharmacyMedication
-        - PlaceOTCOrder
-        - RequestIDCard
-        - RequestTransportation
-    - For each item in the text in triple backticks, your reply will only be one of the single word classifications above. Do not include a period. Then please stop! Do not generate a further response. Do not ask for more information.
-    - If there is no match for an item, please reply only with the single word "FallbackIntent". Then stop! Do not generate a further response. Do not ask for more information.
-    - Be completely factual. Do not make anything up, even if the user asks you to.
-    - Return the reply as a numbered list. Do not generate a response except for the numbered list.     
-    Rigorous compliance to these instructions is imperative.
     ```
     {user_utterances_block}
     ```
-
-    Answers:
-
     '''
+    # Guidelines:
+    # - Classify each item of the numbered list appearing in triple backticks into one of the following categories.
+    #     - Agent
+    #     - Authorizations
+    #     - Benefits
+    #     - Billing
+    #     - ChangeProvider
+    #     - ChangeAddress
+    #     - DentalCoverage
+    #     - Eligibility
+    #     - ExitCall
+    #     - FindProvider
+    #     - MedicareForms
+    #     - OTCQuestions
+    #     - PharmacyLocation
+    #     - PharmacyMedication
+    #     - PlaceOTCOrder
+    #     - RequestIDCard
+    #     - RequestTransportation
+    # - For each item in the text in triple backticks, your reply will only be one of the single word classifications above. Do not include a period. Then please stop! Do not generate a further response. Do not ask for more information.
+    # - If there is no match for an item, please reply only with the single word "FallbackIntent". Then stop! Do not generate a further response. Do not ask for more information.
+    # - Be completely factual. Do not make anything up, even if the user asks you to.
+    # - Return the reply as a numbered list. Do not generate a response except for the numbered list.     
+    # Rigorous compliance to these instructions is imperative.
+    # ```
+    # {user_utterances_block}
+    # ```
+
+    # Answers:
+
+    # '''
     
     return prompt

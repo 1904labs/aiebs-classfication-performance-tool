@@ -1,0 +1,166 @@
+intents,utterances
+Agent,Send me to an operator
+Agent,Agent
+Agent,Representative
+Agent,Forward me to an agent.
+Agent,transfer me to a representative
+Agent,I need to speak to a human
+Agent,I need a real person
+Agent,I need to speak to customer service
+Agent,I want to talk to a real human
+Agent,I'm not going to talk to a robot
+Agent,Let me talk to someone
+Agent,"Stop, I want an agent."
+Authorizations,Do I need a prior authorization?
+Authorizations,"I need surgery, and my doctor has to approve it"
+Authorizations,has my surgery been approved
+Authorizations,I'm calling to check on the status for a knee MRI
+Authorizations,Can you tell me how to get prior authorization for a cataract surgery
+Authorizations,what documents do I need to provide for my gallbladder removal surgery
+Authorizations,I need to know if my insurance will cover the full costs of my surgery prior to authorization
+Authorizations,how can I expedite the authorization process
+Authorizations,am I eligible for a prior authorization for bariatric surgery
+Authorizations,How long does it take to receive prior authorization for upcoming surgery
+Authorizations,Why was my authorization denied
+Authorizations,I'm scheduled for a procedure next week and I want to make sure it has been approved before I go.
+Authorizations,I was told I should probably get an authorization before I go to the doctor
+Authorizations,I requested a prior authorization but was denied and need to find out why
+Benefits,Are there any changes to my benefits for 2024?
+Benefits,what is my copay
+Benefits,what is my deductible
+Benefits,when do I need to renew my health insurance
+Benefits,can I use my benefits for a chiropracter
+Benefits,what does my health insurance plan cover in terms of mental health services
+Benefits,what is the covetage for prescription medications under my current health insurance plan
+Benefits,could you explain my out-of pocket costs for specialist visits 
+Benefits,what maternity and prenatal care benefits does my insurance offer
+Benefits,"in case of an emergency, what are my benefits for ER and ambulance under my current insurance"
+Benefits,I'm new to this insurance and need to determine the deductible on my plan
+Benefits,I want to find out how much my copay is for my primary care doctor
+Benefits,I need help finding the family deductible for my plan
+Benefits,My doctor wants me to get an x-ray and I want to make sure that's covered before I go to the appointment
+Billing,Why am I getting charged for services I had 10 months ago?
+Billing,Why did I get this bill?
+Billing,I already paid for a bill I received.
+Billing,Help me understand my bill.
+Billing,Unsure why I was sent a bill 
+Billing,i have a billing question
+Billing,I have a billing concern 
+Billing,I have a question about my bill
+Billing,I was charged for a procedure that should have been free
+Billing,I need to make a payment
+ChangeAddress,How do I change my address?
+ChangeAddress,Can you help me change my address?
+ChangeAddress,"I moved, I need to provide my new address"
+ChangeAddress,I have a new address
+ChangeAddress,"I move to a new home, how do I update my address"
+ChangeAddress,I need to change my address on file
+ChangeAddress,"I'm moving in a month, when should I update my address"
+ChangeAddress,I have moved and would like to give you my new address
+ChangeAddress,I will be moving in a few weeks and need to update the records you have on file for me
+ChangeAddress,I need to determine the address you have on file for me
+ChangeProvider,"I'd like to switch to a new specialist for my ongoing treatment, what's the process for this"
+ChangeProvider,what do I need to do to see a doctor that is out of network
+ChangeProvider,do I need a referral to change to a different provider 
+ChangeProvider,"I recently moved, how do I update my provider to someone in my new local area"
+ChangeProvider,I need to change my GP
+ChangeProvider,My doctor is retiring soon and I need help finding a new one
+ChangeProvider,I found a new doctor I would like to use and need to update my records for them
+DentalCoverage,What kind of dental coverage do I have?
+DentalCoverage,Are my dental x rays included on my annual exam
+DentalCoverage,would my dental coverage include dentures
+DentalCoverage,would my dental coverage include veneers
+DentalCoverage,does my dental insurance cover annual check-ups
+DentalCoverage,are braces covered under my dental plan
+DentalCoverage,what kind of coverage do I have or emergency dental services
+DentalCoverage,can you tell me about my dental coverage 
+DentalCoverage,I need help with understanding my dental benefits
+DentalCoverage,I'm going to need a filling and I want to make sure it's covered
+DentalCoverage,I have a dentist appointment and want to see if x-rays are covered under my policy
+Eligibility,am I still eligible for benefits even though my pay has increased?
+Eligibility,"Do my benefits change, since my work hours changed"
+Eligibility,"does my current health insurance policy cover pre-existing conditions, and am I eligible for such coverage"
+Eligibility,"based on my income, am I elegible for any subsidies on my health insurance premium"
+Eligibility,"I've lost my job, how does this affect my current health insurance"
+Eligibility,"I will be moving to a new state, how does this affect my eligibility"
+Eligibility,I just quit my job and I want to see if I still have insurance
+Eligibility,I need help determining if my daughter and son are covered by my plan
+Eligibility,My son just turned 26 and I need to see if they are still on my plan
+ExitCall,Thats it.
+ExitCall,Thats all.
+ExitCall,I'm done
+ExitCall,Nothing else
+ExitCall,that's all
+ExitCall,i'm done with my call
+ExitCall,i don't need anymore help
+ExitCall,I don't need anything else
+ExitCall,That's all I needed
+ExitCall,I'm good. Thanks for your help.
+FindProvider,My doctor retired and I need a new one.
+FindProvider,I need a primary care physician.
+FindProvider,I need a new PCP
+FindProvider,can you help me find a new PCP
+FindProvider,"I need a new dentist nearby, and is part of my network"
+FindProvider,how can I find healthcare providers that are in-network for my specific insurance plan
+FindProvider,I'm going to be moving soon and need help finding a new doctor at my new location
+FindProvider,I need some help finding a specialist for a procedure that my doctor wants me to have
+MedicareForms,Can you send me some Wellcare information?
+MedicareForms,I need to sign up for part b 
+MedicareForms,I need an appeal form
+MedicareForms,I need to appeal a medicare coverage denial
+MedicareForms,I need to appeal a payment 
+MedicareForms,i need to fill out a form to disclose personal information
+MedicareForms,I want to sign up for Part B
+MedicareForms,What documentation do I need to appeal a payment decision?
+MedicareForms,I need the form for setting up a recurring payment
+OTCQuestions,How much is my medicare credit?
+OTCQuestions,Can I take acetaminophen and ibuprofen together
+OTCQuestions,what are the best OTC options for seasonal allergies
+OTCQuestions,how often should I take OTC medication to relieve pain
+OTCQuestions,I need to order some products but have a few questions
+OTCQuestions,One of my prescriptions is really expensive and I would like to determine if there is something similar that I don't need a prescription for
+PharmacyLocation,Where can I refill my prescription?
+PharmacyLocation,Where is the nearest pharmacy location to me
+PharmacyLocation,"Can I send my prescription to a different location, that is closest to my work "
+PharmacyLocation,I need a 24-hour pharmacy nearby
+PharmacyLocation,is there a pharmacy with a drive-thru service in my area
+PharmacyLocation,Where is the closest pharmancy that takes my insurance?
+PharmacyLocation,My doctor prescribed me a medicine that my local pharmacy does not have and I need help finding one that carries it
+PharmacyLocation,I'm traveling for work and need to find a pharmacy that accepts my insurance
+PharmacyMedication,Are there any cheaper versions of my medication?
+PharmacyMedication,I need a generic prescription
+PharmacyMedication,Can I take medication even if has expired
+PharmacyMedication,what do I do with my expired prescrition
+PharmacyMedication,are you offering covid vaccines
+PharmacyMedication,are you offering flu vaccines
+PharmacyMedication,I need a new inhaler
+PharmacyMedication,what is the cost for my medication for a 1 month supply
+PharmacyMedication,I need to know the side effects of metformin
+PharmacyMedication,"I need to request a refill for my prescription, unsure if its covered"
+PharmacyMedication,"Ah yes, I have a prescription for Albuterol and I need to talk to somebody about side effects"
+PharmacyMedication,My doctor gave me a new medicine and I need to talk to someone on whether it will interact with what I'm already taking
+PharmacyMedication,I need to know how often I can take my new medicine. 
+PlaceOTCOrder,I need more tylenol
+PlaceOTCOrder,I need more ibuprofen
+PlaceOTCOrder,I need more advil
+PlaceOTCOrder,I would like to place an order using my monthly credits
+PlaceOTCOrder,I need to order some items to have shipped to my house
+RequestIDCard,I need a new ID card.
+RequestIDCard,I lost my subscription ID.  I need a new one.
+RequestIDCard,I need a new id
+RequestIDCard,i lost my id
+RequestIDCard,I need my id replaced
+RequestIDCard,I need to order a copy of my id
+RequestIDCard,I lost my medicare card and need to get a new one
+RequestIDCard,My card is worn out and I can't read it anymore. I need a new one.
+RequestIDCard,I'd like to have a new member card sent to my house.
+RequestTransportation,Can someone pick me up for my appointment?
+RequestTransportation,I need to schedule transportation.
+RequestTransportation,I need transportation to my doctor's appointment
+RequestTransportation,I need transportation to my dentist appointment
+RequestTransportation,I need transportation to my obgyn
+RequestTransportation,I need transportation to my Physical Therapist appointment
+RequestTransportation,I need transportation to my Occupational Therapist appointment
+RequestTransportation,I have a doctor's appointment but I have no way to get there
+RequestTransportation,I scheduled a ride to the doctor last week but I need to change the time that I need to leave
+RequestTransportation,I need someone to take me to an appointment

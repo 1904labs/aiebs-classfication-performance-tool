@@ -64,7 +64,7 @@ def get_prompt():
     29. "Which pharmacies can I use for prescription delivery?"
     30. "Can you send me a temporary ID card while I wait for the original?"
     31. "I need to locate a physical therapist covered by my plan."
-    32. "Is there a preferred pharmacy for my medications?"
+    32. "Is there a preferred pharmacy for my medications?"    
     ```
 
     Answers:
@@ -99,7 +99,7 @@ def get_prompt():
     29. PharmacyLocation
     30. RequestIDCard
     31. FindProvider
-    32. PharmacyLocation
+    32. PharmacyLocation    
 
     Roleplay: You are a customer service dispatcher at a a medical benefits brokerage company.
 

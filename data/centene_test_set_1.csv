@@ -1,0 +1,86 @@
+intents,utterances
+Agent,I'd like to talk with a representative
+Agent,Send me to an agent
+Agent,I want to talk with an person
+Agent,I want to speak to a human
+Agent,Operator
+Authorizations,Hi this is Frank Sullivan.  I want to check the status of my surgery prior auth.
+Authorizations,"My doctor notified me my prior auth was denied, I want to understand the reasons why it was denied."
+Authorizations,When will I know the decision of my surgery prior auth?
+Authorizations,Why was my procedure denied?
+Authorizations,I need to get a prior auth for my surgery.
+Benefits,What coverage do I recieve under my current insurance plan?
+Benefits,"Hi, I want to see if my insurance covers an annual wellness checkup"
+Benefits,Hi I want to check how close I am to reaching my deductable this year.
+Benefits,Does my medicare plan cover eyeglasses?
+Benefits,What are my out of pocket costs?
+Billing,"Hi, i recieved a invoice in the mail but didn't understand what the charges were for."
+Billing,I would like to pay my bill
+Billing,"Hi, this is bill sullivan. I paid my co-pay when i was at the office but i still recieved an invoice. I'd like to undrestand why."
+Billing,My bill doesn't make any sense.
+Billing,I just got my bill in the mail and my doctor is overcharging me for the services I got done.
+ChangeAddress,I'd like to change my address on file.
+ChangeAddress,I think you have the wrong address on file. I'd like to update it.
+ChangeAddress,I just moved across town and would like to update my address.
+ChangeAddress,I recently moved and I need to change my address.
+ChangeAddress,Update my mailing address.
+ChangeProvider,"Hi, this is John Sullivan.  I'm moving to Montana next month and would like to transfer my files to my new doctor."
+ChangeProvider,"Hi, I'd like update my information to reflect my new doctor."
+ChangeProvider,"Hi, my doctor just let me know he is retiring. I need to switch my files to another provider in their practice."
+ChangeProvider,My doctor retired and I need a new one.
+ChangeProvider,I need to change my PCP
+DentalCoverage,"Hi, i want to see if my upcoming tooth cleaning will be covered by my insurance?"
+DentalCoverage,Does my insurance cover braces?
+DentalCoverage,What is my deductable for my tooth doctor?
+DentalCoverage,What benefits does my dental insurance cover?
+DentalCoverage,I need a root canal.  Am I covered?
+Eligibility,I want to understand if I can get a cheaper insurance plan
+Eligibility,When is the next enrollment period?
+Eligibility,"I just got left go from my company, how long will I be covered by my current insurance plan?"
+Eligibility,How do I qualify for medicare?
+Eligibility,When do I become eligible for Wellcare?
+ExitCall,"I think that's all the questions I have, thanks."
+ExitCall,"Thanks, I don't think I have any more questions."
+ExitCall,Bye
+ExitCall,"That's all, thanks."
+ExitCall,I dont have any more questions.
+FindProvider,"Hi, I'm thinking about switching to a new doctor, can you help me find a new physician?"
+FindProvider,Can you help me find a chiropractor near me that takes my insurance?
+FindProvider,"Hi, who is the closest chrioprator to me?"
+FindProvider,Find a doctor who is taking new patients
+FindProvider,Find a doctor.
+MedicareForms,I want to apply for coverage.
+MedicareForms,I want to enroll in coverage.
+MedicareForms,I want to appeal a charge.
+MedicareForms,I'd like to request medicare information.
+MedicareForms,How do I apply for Wellcare?
+OTCQuestions,"Hi, I want to double check what the maximum daily dosage of Asprin is."
+OTCQuestions,I'd like to understand if i can take asprin at the same time as tylenol.
+OTCQuestions,What is the maximum dosage of childrens tylenol that i can give my 3 year old grandson?
+OTCQuestions,How do I spend my over the counter credit?
+OTCQuestions,How often can I use my OTC credit?
+PharmacyLocation,What local pharmacy's take my insurance?
+PharmacyLocation,Can you help me find a nearby pharmacy?
+PharmacyLocation,Can you help me find the closest CVS pharmacy to me?
+PharmacyLocation,What are the preferred pharmacies in my network?
+PharmacyLocation,I need help finding the closest pharmacy.
+PharmacyMedication,"Hi this is normand plant, my doctor recently prescribed me a new medication. I want to make sure it won't effect the other prescriptions I am on. Is there someone I could talk to?"
+PharmacyMedication,Hi this is Patrick Mcdonnald. The directions on the side of my medication box don't make sense to me. Can someone help me?
+PharmacyMedication,"Hi, I accidently took an extra dose of my medication. Is this bad?"
+PharmacyMedication,Can I switch to a generic version of my medicine?
+PharmacyMedication,How do I take my prescription?
+PlaceOTCOrder,I'd like to get some more Advil.
+PlaceOTCOrder,I'd like to order some more band aids.
+PlaceOTCOrder,"Hi, I just used up all of my neosporin ointment after my last surgery, i need to order some more."
+PlaceOTCOrder,I need help placing an over the counter order.
+PlaceOTCOrder,I need more acetaminophen
+RequestIDCard,"Hi, my wallet got stolen, i need to get a proof of insurance."
+RequestIDCard,"Hi, I lost my card. I need a new one."
+RequestIDCard,I need a new card
+RequestIDCard,I need to replace my insurance card.
+RequestIDCard,"I can't find where i put my card, can you send me a new one?"
+RequestTransportation,"Hi, I need to schedule a ride my appointment."
+RequestTransportation,I have an appointment next week and need a ride to it.
+RequestTransportation,I need a ride to my appointment next week.
+RequestTransportation,I need a ride.
+RequestTransportation,I have a doctors appointment on Monday.  Can you take me?

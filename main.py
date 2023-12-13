@@ -4,10 +4,12 @@ import llm_prompts, llm_prompts_openai
 import llm_responses
 
 import os
+import time
 import traceback
 
 import boto3
 import numpy as np
+import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -25,16 +27,17 @@ st.set_page_config(
 
 with st.sidebar:
     # Framework 
-    framework_selection = st.selectbox('Framework', (FRAMEWORK_BEDROCK, FRAMEWORK_OPENAI))
+    framework_selection = st.selectbox('Framework', (FRAMEWORK_OPENAI, FRAMEWORK_BEDROCK))
 
     # Model
     opeanai_models = (MODEL_OPENAI_GPT_3_5_TURBO,)
-    bedrock_models = (MODEL_BEDROCK_COHERE_V14,
-                      MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,
-                    #   MODEL_BEDROCK_JURASSIC2_MID_V1,
-                    #   MODEL_BEDROCK_JURASSIC2_ULTRA_V1,
-                    #   MODEL_BEDROCK_TITAN_LITE_V1,
-                      )
+    bedrock_models = (MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,)
+    # bedrock_models = (MODEL_BEDROCK_COHERE_V14,
+    #                   MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,
+    #                   MODEL_BEDROCK_JURASSIC2_MID_V1,
+    #                   MODEL_BEDROCK_JURASSIC2_ULTRA_V1,
+    #                   MODEL_BEDROCK_TITAN_LITE_V1,
+    #                   )
 
     if framework_selection == FRAMEWORK_OPENAI:
         model_selection = st.selectbox('Model', opeanai_models)
@@ -79,7 +82,7 @@ st.divider()
 input_data_tab, prompt_tab, labels_tab, label_accuracy, logs_tab, compare_tab, model_info_tab = st.tabs(['Input Data',
                                                                                                          'Prompt',
                                                                                                          'Classification Predictions',
-                                                                                                         'Accuracy of Classifications',
+                                                                                                         'Classification Performance',
                                                                                                          'Logs',
                                                                                                          'Compare Submissions',
                                                                                                          'Model Info',])
@@ -170,16 +173,20 @@ else:
         nbr_correct_total = 0
         nbr_nonerror_loops = 0
         nbr_total_no_nan = 0
+        time_for_runs_total = 0
+        combined_errors_df = pd.DataFrame(columns=['predicted_intent','actual_intent', 'user_utterance'])
         for i in range(nbr_of_runs):
             st.markdown(f'<h3>Run #{i + 1}</h3>', unsafe_allow_html=True)
-
             try:
                 with st.spinner('Thinking...'):
+                    start_time = time.time()
                     response = llm_responses.response_dispatcher(prompt,
                                                                  framework_selection,
                                                                  model_selection,
                                                                  openai_key=openai_key,
                                                                  aws_client=aws_client)
+                    end_time = time.time()
+                    time_for_run = end_time - start_time                    
                     st.chat_message('assistant').write(response)
             except Exception as e:
                 st.info(traceback.format_exc())
@@ -198,24 +205,39 @@ else:
             # Analysis
             with label_accuracy:
                 try:
-                    st.markdown(f'\n\n\n<h3>Run {i + 1}</h3>', unsafe_allow_html=True)
-                    prediction_error, nbr_correct, nbr_total, prediction_percentage = analysis.get_prediction_errors(response, DATA_FILE)
-                    # prediction_error, nbr_correct, nbr_total, prediction_percentage = logs.get_prediction_errors(log_report_file_name)
+                    st.markdown(f'<h3>Run {i + 1}</h3>', unsafe_allow_html=True)
+                    errors_df, nbr_correct, nbr_total, prediction_percentage = analysis.get_prediction_errors(response, DATA_FILE)
+                    combined_errors_df = pd.concat([combined_errors_df, errors_df])
                     if np.isnan(nbr_correct):
                         st.markdown('ERROR\n\n')
                     else:
                         st.markdown(f'Prediction accuracy = {nbr_correct} / {nbr_total} = {prediction_percentage:,.0f}%.')
                         nbr_correct_total += nbr_correct
+                        time_for_runs_total += time_for_run
                         nbr_nonerror_loops += 1
                         nbr_total_no_nan = nbr_total
                         if 0 <= prediction_percentage < 100:
-                            st.markdown(prediction_error, unsafe_allow_html=True)
+                            st.write(errors_df)
+                    st.markdown(f'(Response generation time = {time_for_run:,.1f} s.)')
+                    st.write('\n\n\n')
+
                 except Exception as e:
                     st.info(traceback.format_exc())
                     st.stop()        
 
-        # Accuracy over all runs
+        # Stats over all runs
         with label_accuracy:
-            st.markdown(f'<h3>Overall accuracy</h3>', unsafe_allow_html=True)
+            st.markdown(f'<h3>Overall Performance</h3>', unsafe_allow_html=True)
             accuracy = 100 * nbr_correct_total / (nbr_total_no_nan * nbr_nonerror_loops)
-            st.markdown(f'Overall accuracy = {nbr_correct_total} / {(nbr_total_no_nan * nbr_nonerror_loops)} = {accuracy:.0f}%.')
+            st.markdown(f'Mean accuracy = {nbr_correct_total} / {(nbr_total_no_nan * nbr_nonerror_loops)} = {accuracy:.0f}%.')
+
+            st.markdown(f'<h4>Incorrect Predicted Intents v Actual Intents</h4>', unsafe_allow_html=True)
+            error_counts_df = combined_errors_df.groupby(['predicted_intent', 'actual_intent']).count()
+            st.write(error_counts_df)
+
+            st.markdown(f'<h4>Incorrect Utterances</h4>', unsafe_allow_html=True)
+            error_utterances_df = combined_errors_df.groupby(combined_errors_df.columns.tolist(), as_index=False).size()
+            st.write(error_utterances_df)
+
+            mean_time = time_for_runs_total / nbr_nonerror_loops
+            st.markdown(f'(Mean response run time = {mean_time:.1f} s.)', unsafe_allow_html=True)
