@@ -3,6 +3,7 @@ import analysis, logs
 import llm_prompts, llm_prompts_openai
 import llm_responses
 
+from io import StringIO
 import os
 import time
 import traceback
@@ -31,14 +32,12 @@ with st.sidebar:
 
     # Model
     opeanai_models = (MODEL_OPENAI_GPT_3_5_TURBO,)
-    bedrock_models = (MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,)
-    # bedrock_models = (MODEL_BEDROCK_COHERE_V14,
-    #                   MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,
-    #                   MODEL_BEDROCK_JURASSIC2_MID_V1,
-    #                   MODEL_BEDROCK_JURASSIC2_ULTRA_V1,
-    #                   MODEL_BEDROCK_TITAN_LITE_V1,
-    #                   )
+    bedrock_models = (MODEL_BEDROCK_LLAMA2_70B_CHAT_V1,
+                      MODEL_BEDROCK_COHERE_V14,
+                      MODEL_BEDROCK_JURASSIC2_MID_V1,
+                      MODEL_BEDROCK_JURASSIC2_ULTRA_V1)
 
+    
     if framework_selection == FRAMEWORK_OPENAI:
         model_selection = st.selectbox('Model', opeanai_models)
     else:
@@ -46,6 +45,13 @@ with st.sidebar:
 
     # Nbr of runs for this submission
     nbr_of_runs = st.number_input('Number of times to run classification', min_value=1, max_value=10)
+
+    # Prompt file
+    # prompt_file = st.file_uploader('Choose a prompt file')
+    # prompt_data = None
+    # if prompt_file is not None:
+    #     stringio = StringIO(prompt_file.getvalue().decode('utf-8'))
+    #     prompt_data = stringio.read()
     
     # Submit button
     submit = st.button('Submit', type='secondary')
@@ -98,7 +104,10 @@ with input_data_tab:
     st.write(input_data)
 
 with prompt_tab:
-    st.write(prompt)
+    # if prompt_data is not None:
+    #     st.write(prompt_data)
+    if prompt is not None:
+        st.write(prompt)
 
 with model_info_tab:
     info_string = '''\

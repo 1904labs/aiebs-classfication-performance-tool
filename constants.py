@@ -1,8 +1,8 @@
 # data file - hardcoded for now
 # DATA_FILE = 'data/prompts_centene_short.csv'
 # DATA_FILE = 'data/centene_test_set.csv'
-# DATA_FILE = 'data/centene_test_set_1.csv'
-DATA_FILE = 'data/centene_test_set_2.csv'
+DATA_FILE = 'data/centene_test_set_1.csv'
+# DATA_FILE = 'data/centene_test_set_2.csv'
 
 # classifications
 CLASSIFICATIONS = ['Authorizations', 'Benefits', 'Billing', 'ChangeAddress', 'ChangeProvider', 
@@ -30,4 +30,3 @@ MODEL_BEDROCK_LLAMA2_70B_CHAT_V1 = 'meta.llama2-70b-chat-v1'
 
 # Heatmap for comparison evaluation
 HEATMAP_FONT_SIZE = 3
-

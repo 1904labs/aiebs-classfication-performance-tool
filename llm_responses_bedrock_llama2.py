@@ -1,8 +1,8 @@
 import json
 
 
-def get_parsed_response(prompt, model_selection, client):
-    # request
+def get_classification_results(prompt, model_selection, client):
+    # response
     body = json.dumps({
             "prompt": prompt,
             # "max_gen_len": 512,
@@ -14,9 +14,7 @@ def get_parsed_response(prompt, model_selection, client):
         'modelId': model_selection,
         'accept': 'application/json',
         'contentType': 'application/json'
-    }
-    
-    # response
+    }    
     response = client.invoke_model(**kwargs)
 
     # parse response

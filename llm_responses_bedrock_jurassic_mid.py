@@ -1,7 +1,7 @@
 import json
 
-def get_parsed_response(prompt, model_selection, client):
-    # request
+def get_classification_results(prompt, model_selection, client):
+    # response
     body = json.dumps({
         'prompt': prompt,
         'maxTokens': 500,
@@ -12,15 +12,12 @@ def get_parsed_response(prompt, model_selection, client):
         # 'presencePenalty': {'scale': 0},
         # 'frequencyPenalty': {'scale': 0}  
     })
-
     kwargs = {
         'body': body,
         'modelId': model_selection,
         'accept': 'application/json',
         'contentType': 'application/json'
-    }
-    
-    # response
+    }    
     response = client.invoke_model(**kwargs)
 
     # parse response
